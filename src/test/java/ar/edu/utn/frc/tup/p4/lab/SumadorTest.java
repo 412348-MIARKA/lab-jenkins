@@ -7,6 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SumadorTest {
     @Test
     void sumaDosNumeros() {
-        assertEquals(5, Sumador.sumar(2, 2));
+        assertEquals(4, Sumador.sumar(2, 2));
     }
 }

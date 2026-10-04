@@ -36,6 +36,8 @@ de este laboratorio y dejar `Jenkinsfile` como **Script Path**. Ejecutar
 **Build Now** en el commit verde, luego otra vez después del push rojo. En cada
 build, ver **Test Result**; el reporte se publica desde
 `target/surefire-reports/*.xml` incluso si `mvn test` termina con error.
+La configuración del job utilizada para esta evidencia está en
+`jenkins/job-config.xml`.
 
 Jenkins se expone solo en `127.0.0.1:8085` y la imagen desactiva el asistente
 inicial exclusivamente para este laboratorio local. No usar este Compose como
@@ -62,9 +64,12 @@ corre de todos modos y permite inspeccionar cuál test falló.
 
 ## Evidencia de la tarea
 
-Completar al obtener las corridas reales:
+- Repositorio: https://github.com/412348-MIARKA/lab-jenkins
+- Actions verde (commit `0fca988`): https://github.com/412348-MIARKA/lab-jenkins/actions/runs/37210223521
+- Actions rojo provocado (commit `27984ee`): https://github.com/412348-MIARKA/lab-jenkins/actions/runs/37210547926
+- Jenkins verde local: http://127.0.0.1:8085/job/lab-ci-t11-09/1/
+- Jenkins rojo local: http://127.0.0.1:8085/job/lab-ci-t11-09/2/
 
-- URL del repositorio: pendiente.
-- URL de corrida verde de Actions: pendiente.
-- URL de corrida roja de Actions: pendiente.
-- Captura del job verde y rojo de Jenkins: pendiente.
+Los enlaces de Jenkins solo funcionan en la máquina donde corre Docker. En
+esta entrega, el job `#1` terminó `SUCCESS` con un test sin fallas y el `#2`
+terminó `FAILURE` con un test fallido publicado en **Resultado de los tests**.
